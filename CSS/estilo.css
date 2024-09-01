@@ -1,0 +1,255 @@
+
+@charset "UTF-08";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300&family=Signika+Negative:wght@300&family=Titillium+Web:wght@200&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300&family=Signika+Negative:wght@300&family=Titillium+Web:wght@200&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+
+
+:root {
+    --cor1: #151515;
+    --cor2: #363636;
+    --cor3: #ffde59;
+    --cor4: #f1e18f;
+    --cor5: #f6f7eb;
+
+    --font-geral: Verdana, Arial, sans-serif;
+    --font-titulo: 'Noto Sans JP', sans-serif;
+    --font-sub: 'Signika Negative', sans-serif;
+    --font-link: 'Poppins', sans-serif;
+}
+
+p, textarea, input, label {
+    font-family: var(--font-geral);
+}
+
+h1 {
+    font-family: var(--font-titulo);
+}
+
+h2, h3 {
+    font-family: var(--font-sub);
+}
+
+a {
+    font-family: var(--font-link);
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth; /* Suaviza a rolagem */
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(15px);
+    transform: translateX(-100%);
+    transition: all 2s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0%);
+    transition: all 2s;
+}
+
+/* ===================================================================================================================================  */
+
+
+/* Header */
+
+.cabecalho {
+    padding: 40px 4%;
+
+    background-color: var(--cor1);
+}
+
+.cabecalho > .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cabecalho a {
+    color: var(--cor4);
+}
+
+.menu {
+    max-width: 1280px;
+
+    margin: 0 auto;
+}
+
+.menu-pc a {
+    margin: 20px;
+    
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    font-size: 1.1em;
+
+    transition: all 0.5s;
+}
+
+.menu-pc a:hover {
+    text-shadow: 0px 0px 12px #ffde59;
+
+    color: var(--cor3);
+
+    font-size: 1.2em;
+}
+
+.logo > a> img {
+    width: 100px;
+}
+
+
+/*========================================================================================================================*/
+
+/*Corpo*/
+
+
+
+section {
+    padding: 2rem 0;
+}
+
+section#about {
+    background-color: #f4f4f4;
+}
+
+section#about .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.profile-photo {
+    width: 200px; 
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 1rem auto;
+    border: 3px solid #FFD700;
+}
+
+.text-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.text-content p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+section#portfolio {
+    background-color: #f9f9f9;
+}
+
+section#portfolio .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.portfolio-item {
+    flex: 1 1 calc(33.333% - 1rem);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.portfolio-item img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input, form textarea {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+}
+
+form button {
+    padding: 0.5rem;
+    background-color: #FFD700; /* Dourado */
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .portfolio-item {
+        flex: 1 1 calc(50% - 1rem);
+    }
+
+    .cabecalho {
+        padding: 10px;
+    }
+    
+    section#contact {
+        width: 95%;
+        margin: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-item {
+        flex: 1 1 100%;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    section#contact {
+        width: 95%;
+        margin: auto;
+    }
+}
